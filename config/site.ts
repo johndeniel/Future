@@ -1,7 +1,7 @@
 import { SiteConfig } from "@/types"
 
 export const siteConfig: SiteConfig = {
-  name: "Viewport",
+  name: "johndeniel",
   description:
     "",
   url: "",
