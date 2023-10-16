@@ -1,0 +1,17 @@
+{
+  "index": {
+    "title": "Home",
+    "theme": {
+      "typesetting": "article",
+      "breadcrumb": false,
+      "footer": true,
+      "sidebar": false,
+      "toc": false,
+      "pagination": false
+    }
+  },
+  "about": {
+    "title": "About",
+    "type": "page"
+  }
+}
