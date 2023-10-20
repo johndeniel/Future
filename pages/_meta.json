@@ -1,13 +1,10 @@
 {
   "index": {
-    "title": "Home",
+    "type": "page",
+    "title": "johndeniel",
+    "display": "hidden",
     "theme": {
-      "typesetting": "article",
-      "breadcrumb": false,
-      "footer": true,
-      "sidebar": false,
-      "toc": false,
-      "pagination": false
+      "layout": "raw"
     }
   },
   "about": {
