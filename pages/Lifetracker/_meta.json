@@ -1,0 +1,14 @@
+{
+  "introduction": {
+    "title": "Introduction",
+    "theme": {
+      "typesetting": "article"
+    }
+  },
+  "introduction2": {
+    "title": "Copy",
+    "theme": {
+      "typesetting": "article"
+    }
+  }
+}

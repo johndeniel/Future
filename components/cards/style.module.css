@@ -1,0 +1,59 @@
+/* Styles for mobile devices (e.g., smartphones) */
+@media (max-width: 767px) {
+  /* Add your mobile-specific styles here */
+  .cards {
+    padding-right: 1rem;
+    padding-left: 1rem;
+    display: grid;
+    --rows: 3;
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(max(250px, calc((100% - 1rem * 2) / var(--rows))), 1fr)
+    );
+  }
+  /* Other mobile styles */
+}
+
+/* Styles for larger screens (e.g., desktops) */
+@media (min-width: 768px) {
+  /* Add your desktop-specific styles here */
+  .cards {
+    padding-right: 15rem;
+    padding-left: 15rem;
+    display: grid;
+    --rows: 3;
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(max(250px, calc((100% - 1rem * 2) / var(--rows))), 1fr)
+    );
+  }
+  /* Other desktop styles */
+}
+
+
+.card:hover svg {
+  color: currentColor;
+}
+
+.card svg {
+  width: 1.5rem;
+  color: #00000079;
+  transition: color 0.3s ease;
+}
+
+.card p {
+  margin-top: 0.5rem;
+}
+
+.card .title {
+  display: flex;
+  font-weight: 600;
+  align-items: flex-start;
+}
+
+:global(.dark) .card svg {
+  color: #ffffff66;
+}
+:global(.dark) .card:hover svg {
+  color: currentColor;
+}

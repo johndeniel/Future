@@ -1,8 +1,80 @@
-Jaydee Stack
-```npm
-npx install jaydee
-```
+import { Card, Cards } from "@components/cards";
+import Hero from "@components/hero";
+import {
+  XIcon,
+  LogoutIcon,
+  ViewGridIcon,
+  CogIcon,
+  TemplateIcon,
+  RectangleStackIcon,
+  UserGroupIcon,
+  MusicalNoteIcon,
+  SwatchIcon,
+  BookmarkIcon,
+  ChartPieIcon,
+  SearchIcon,
+  LoginIcon,
+  MagnifyingGlassIcon,
+  ArrowRightOnRectangleIcon
+} from "@heroicons/react/24/outline";
 
-import Counters from '../components/hero'
+<Hero/>
 
-<Counters />
+<Cards>
+	<Card
+		icon={
+			<ArrowRightOnRectangleIcon className="w-6 h-6" />
+		}
+		title="Login"
+		href="/Lifetracker/introduction"
+	/>
+	<Card
+		icon={
+			<MagnifyingGlassIcon className="w-6 h-6" />
+		}
+		title="Search"
+		href="/search"
+	/>
+	<Card
+		icon={
+			<ChartPieIcon className="w-6 h-6" />
+		}
+		title="Statistics"
+		href="/statistics"
+	/>
+	<Card
+		icon={
+			<SwatchIcon className="w-6 h-6" />
+		}
+		title="Genre"
+		href="/genre"
+	/>
+	<Card
+		icon={
+			<BookmarkIcon className="w-6 h-6" />
+		}
+		title="Playlist"
+		href="/playlist"
+	/>
+	<Card
+		icon={
+			<UserGroupIcon className="w-6 h-6" />
+		}
+		title="Artist"
+		href="/artist"
+	/>
+	<Card
+		icon={
+			<RectangleStackIcon className="w-6 h-6" />
+		}
+		title="Album"
+		href="/album"
+	/>
+	<Card
+		icon={
+			<MusicalNoteIcon className="w-6 h-6" />
+		}
+		title="Song"
+		href="/song"
+	/>
+</Cards>

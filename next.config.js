@@ -3,4 +3,13 @@ const withNextra = require('nextra')({
   themeConfig: './theme.config.tsx',
 })
 
-module.exports = withNextra()
+const nextConfig = {
+  env: {
+    // API_URL: "http://localhost:3000",
+    API_URL: "https://my-musicc.vercel.app",
+    BASE_URL: "https://my-music-docs.vercel.app",
+    SITE_URL: "my-music-docs.vercel.app",
+  }
+};
+
+module.exports = withNextra(nextConfig)

@@ -1,324 +1,46 @@
-import Link from "next/link"
+import React from "react";
+import Link from "next/link";
 
-export default function hero() {
+export default function Meneses() {
+
   return (
-    <section className="w-full">
-      <main className="container mx-auto px-4 md:px-6 py-8">
-        <section className="mb-8">
-          <h2 className="text-2xl font-bold mb-4">Latest Project</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <img
-                alt="Viewport"
-                className="w-full h-64 object-cover object-center rounded-lg"
-                height="400"
-                src="https://res.cloudinary.com/dr4uv6fs6/image/upload/v1696398826/zinu0im90agdyvto5v99.jpg"
-                width="600"
-              />
-            </div>
-            <div className="flex flex-col justify-center">
-              <h3 className="text-xl font-bold mb-2">Viewport</h3>
-              <p className="text-zinc-500 dark:text-zinc-400">
-                Bulacan State University Web Page base on Nextjs. I am creating innovative online solutions to enhance user experiences and drive digital success. 
-                Server-Side Rendering (SSR), Static Site Generation (SSG), Routing,
-                API Routes, Data Fetching. Authentication,Internationalization, Deployment.
-              </p>
-              <Link className="text-blue-500 hover:text-blue-700 mt-4" href="#">
-                Read More
-              </Link>
-            </div>
+    <React.Fragment>
+      {/* Introduction section */}
+      <section className="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32">
+        <div className="container flex max-w-[64rem] flex-col items-center gap-4 text-center">
+          {/* Link to the BulSU Portal */}
+          <Link
+            href=""
+            className="rounded-2xl bg-muted px-4 py-1.5 text-sm font-medium"
+            target="_blank"
+          >
+            BulSU Portal
+          </Link>
+          {/* Main title */}
+          <h1 className="font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
+             Your Path to Innovation and Exploration Begins Here
+          </h1>
+          {/* Description */}
+          <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
+            I&apos;m building a web app with Next.js 13 and open sourcing
+            everything. Follow along as we figure this out together.
+          </p>
+          {/* Buttons */}
+          <div className="space-x-4">
+            <Link href="">
+              Get Started
+            </Link>
+            <Link
+              href=""
+              target="_blank"
+              rel="noreferrer"
+              
+            >
+              GitHub
+            </Link>
           </div>
-        </section>
-
-
-        <section className="mb-8">
-          <h2 className="text-2xl font-bold mb-4">Article</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-            <div>
-              <img
-                alt="Politics Story Image"
-                className="w-full h-64 object-cover object-center rounded-lg"
-                height="400"
-                src="https://getshogun.com/wp-content/uploads/2022/07/61d5e1b6ae8db76cba5ac2fe_Coming-Soon-Page.jpeg"
-                width="600"
-              />
-              <h3 className="text-xl font-bold mb-2 mt-4">Lorem ipsum dolor sit amet</h3>
-              <p className="text-zinc-500 dark:text-zinc-400">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <Link className="text-blue-500 hover:text-blue-700 mt-4" href="#">
-                Read More
-              </Link>
-            </div>
-
-            <div>
-              <img
-                alt="Politics Story Image"
-                className="w-full h-64 object-cover object-center rounded-lg"
-                height="400"
-                src="https://getshogun.com/wp-content/uploads/2022/07/61d5e1b6ae8db76cba5ac2fe_Coming-Soon-Page.jpeg"
-                width="600"
-              />
-              <h3 className="text-xl font-bold mb-2 mt-4">Lorem ipsum dolor sit amet</h3>
-              <p className="text-zinc-500 dark:text-zinc-400">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <Link className="text-blue-500 hover:text-blue-700 mt-4" href="#">
-                Read More
-              </Link>
-            </div>
-            
-            <div>
-              <img
-                alt="Politics Story Image"
-                className="w-full h-64 object-cover object-center rounded-lg"
-                height="400"
-                src="https://getshogun.com/wp-content/uploads/2022/07/61d5e1b6ae8db76cba5ac2fe_Coming-Soon-Page.jpeg"
-                width="600"
-              />
-              <h3 className="text-xl font-bold mb-2 mt-4">Lorem ipsum dolor sit amet</h3>
-              <p className="text-zinc-500 dark:text-zinc-400">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <Link className="text-blue-500 hover:text-blue-700 mt-4" href="#">
-                Read More
-              </Link>
-            </div>
-            
-          </div>
-        </section>
-
-
-        <section className="mb-8">
-          <h2 className="text-2xl font-bold mb-4">Business</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-            <div>
-              <img
-                alt="Business Story Image"
-                className="w-full h-64 object-cover object-center rounded-lg"
-                height="400"
-                src="https://getshogun.com/wp-content/uploads/2022/07/61d5e1b6ae8db76cba5ac2fe_Coming-Soon-Page.jpeg"
-                width="600"
-              />
-              <h3 className="text-xl font-bold mb-2 mt-4">Lorem ipsum dolor sit amet</h3>
-              <p className="text-zinc-500 dark:text-zinc-400">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <Link className="text-blue-500 hover:text-blue-700 mt-4" href="#">
-                Read More
-              </Link>
-            </div>
-
-            <div>
-              <img
-                alt="Business Story Image"
-                className="w-full h-64 object-cover object-center rounded-lg"
-                height="400"
-                src="https://getshogun.com/wp-content/uploads/2022/07/61d5e1b6ae8db76cba5ac2fe_Coming-Soon-Page.jpeg"
-                width="600"
-              />
-              <h3 className="text-xl font-bold mb-2 mt-4">Lorem ipsum dolor sit amet</h3>
-              <p className="text-zinc-500 dark:text-zinc-400">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <Link className="text-blue-500 hover:text-blue-700 mt-4" href="#">
-                Read More
-              </Link>
-            </div>
-
-            <div>
-              <img
-                alt="Business Story Image"
-                className="w-full h-64 object-cover object-center rounded-lg"
-                height="400"
-                src="https://getshogun.com/wp-content/uploads/2022/07/61d5e1b6ae8db76cba5ac2fe_Coming-Soon-Page.jpeg"
-                width="600"
-              />
-              <h3 className="text-xl font-bold mb-2 mt-4">Lorem ipsum dolor sit amet</h3>
-              <p className="text-zinc-500 dark:text-zinc-400">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <Link className="text-blue-500 hover:text-blue-700 mt-4" href="#">
-                Read More
-              </Link>
-            </div>
-
-          </div>
-        </section>
-
-        <section className="mb-8">
-          <h2 className="text-2xl font-bold mb-4">Next.js</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-            <div>
-              <img
-                alt="Tech Story Image"
-                className="w-full h-64 object-cover object-center rounded-lg"
-                height="400"
-                src="https://getshogun.com/wp-content/uploads/2022/07/61d5e1b6ae8db76cba5ac2fe_Coming-Soon-Page.jpeg"
-                width="600"
-              />
-              <h3 className="text-xl font-bold mb-2 mt-4">Lorem ipsum dolor sit amet</h3>
-              <p className="text-zinc-500 dark:text-zinc-400">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <Link className="text-blue-500 hover:text-blue-700 mt-4" href="#">
-                Read More
-              </Link>
-            </div>
-
-            <div>
-              <img
-                alt="Tech Story Image"
-                className="w-full h-64 object-cover object-center rounded-lg"
-                height="400"
-                src="https://getshogun.com/wp-content/uploads/2022/07/61d5e1b6ae8db76cba5ac2fe_Coming-Soon-Page.jpeg"
-                width="600"
-              />
-              <h3 className="text-xl font-bold mb-2 mt-4">Lorem ipsum dolor sit amet</h3>
-              <p className="text-zinc-500 dark:text-zinc-400">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <Link className="text-blue-500 hover:text-blue-700 mt-4" href="#">
-                Read More
-              </Link>
-            </div>
-
-            <div>
-              <img
-                alt="Tech Story Image"
-                className="w-full h-64 object-cover object-center rounded-lg"
-                height="400"
-                src="https://getshogun.com/wp-content/uploads/2022/07/61d5e1b6ae8db76cba5ac2fe_Coming-Soon-Page.jpeg"
-                width="600"
-              />
-              <h3 className="text-xl font-bold mb-2 mt-4">Lorem ipsum dolor sit amet</h3>
-              <p className="text-zinc-500 dark:text-zinc-400">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <Link className="text-blue-500 hover:text-blue-700 mt-4" href="#">
-                Read More
-              </Link>
-            </div>
-
-          </div>
-        </section>
-
-        <section className="mb-8">
-          <h2 className="text-2xl font-bold mb-4">Python</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-            <div>
-              <img
-                alt="Culture Story Image"
-                className="w-full h-64 object-cover object-center rounded-lg"
-                height="400"
-                src="https://getshogun.com/wp-content/uploads/2022/07/61d5e1b6ae8db76cba5ac2fe_Coming-Soon-Page.jpeg"
-                width="600"
-              />
-              <h3 className="text-xl font-bold mb-2 mt-4">Lorem ipsum dolor sit amet</h3>
-              <p className="text-zinc-500 dark:text-zinc-400">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <Link className="text-blue-500 hover:text-blue-700 mt-4" href="#">
-                Read More
-              </Link>
-            </div>
-
-            <div>
-              <img
-                alt="Culture Story Image"
-                className="w-full h-64 object-cover object-center rounded-lg"
-                height="400"
-                src="https://getshogun.com/wp-content/uploads/2022/07/61d5e1b6ae8db76cba5ac2fe_Coming-Soon-Page.jpeg"
-                width="600"
-              />
-              <h3 className="text-xl font-bold mb-2 mt-4">Lorem ipsum dolor sit amet</h3>
-              <p className="text-zinc-500 dark:text-zinc-400">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <Link className="text-blue-500 hover:text-blue-700 mt-4" href="#">
-                Read More
-              </Link>
-            </div>
-
-            <div>
-              <img
-                alt="Culture Story Image"
-                className="w-full h-64 object-cover object-center rounded-lg"
-                height="400"
-                src="https://getshogun.com/wp-content/uploads/2022/07/61d5e1b6ae8db76cba5ac2fe_Coming-Soon-Page.jpeg"
-                width="600"
-              />
-              <h3 className="text-xl font-bold mb-2 mt-4">Lorem ipsum dolor sit amet</h3>
-              <p className="text-zinc-500 dark:text-zinc-400">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <Link className="text-blue-500 hover:text-blue-700 mt-4" href="#">
-                Read More
-              </Link>
-            </div>
-
-          </div>
-        </section>
-
-
-        <section className="mb-8">
-          <h2 className="text-2xl font-bold mb-4">Java</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div>
-              <img
-                alt="Sports Story Image"
-                className="w-full h-64 object-cover object-center rounded-lg"
-                height="400"
-                src="https://getshogun.com/wp-content/uploads/2022/07/61d5e1b6ae8db76cba5ac2fe_Coming-Soon-Page.jpeg"
-                width="600"
-              />
-              <h3 className="text-xl font-bold mb-2 mt-4">Lorem ipsum dolor sit amet</h3>
-              <p className="text-zinc-500 dark:text-zinc-400">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <Link className="text-blue-500 hover:text-blue-700 mt-4" href="#">
-                Read More
-              </Link>
-            </div>
-            <div>
-              <img
-                alt="Sports Story Image"
-                className="w-full h-64 object-cover object-center rounded-lg"
-                height="400"
-                src="https://getshogun.com/wp-content/uploads/2022/07/61d5e1b6ae8db76cba5ac2fe_Coming-Soon-Page.jpeg"
-                width="600"
-              />
-              <h3 className="text-xl font-bold mb-2 mt-4">Lorem ipsum dolor sit amet</h3>
-              <p className="text-zinc-500 dark:text-zinc-400">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <Link className="text-blue-500 hover:text-blue-700 mt-4" href="#">
-                Read More
-              </Link>
-            </div>
-            <div>
-              <img
-                alt="Sports Story Image"
-                className="w-full h-64 object-cover object-center rounded-lg"
-                height="400"
-                src="https://getshogun.com/wp-content/uploads/2022/07/61d5e1b6ae8db76cba5ac2fe_Coming-Soon-Page.jpeg"
-                width="600"
-              />
-              <h3 className="text-xl font-bold mb-2 mt-4">Lorem ipsum dolor sit amet</h3>
-              <p className="text-zinc-500 dark:text-zinc-400">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <Link className="text-blue-500 hover:text-blue-700 mt-4" href="#">
-                Read More
-              </Link>
-            </div>
-          </div>
-        </section>
-      </main>
-    </section>
-  )
+        </div>
+      </section>
+    </React.Fragment>
+  );
 }

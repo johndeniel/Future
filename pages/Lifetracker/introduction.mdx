@@ -1,0 +1,57 @@
+# Object-Oriented Programming (OOP) in Java
+
+Object-Oriented Programming (OOP) is a programming paradigm that is widely used in Java. It is based on the concept of "objects," which can contain both data and methods to manipulate that data. OOP promotes modularity and reusability in code, making it easier to develop and maintain complex software systems.
+
+## Key Concepts of OOP in Java
+
+### 1. **Classes and Objects**
+
+   - In Java, everything is defined within classes. A class is a blueprint for creating objects.
+   - Objects are instances of classes. They represent real-world entities and encapsulate both data (attributes) and behavior (methods).
+
+### 2. **Encapsulation**
+
+   - Encapsulation is the practice of bundling data (attributes) and methods that operate on that data into a single unit (i.e., a class).
+   - Access to the internal state of an object is controlled by access modifiers like `public`, `private`, and `protected`.
+
+### 3. **Inheritance**
+
+   - Inheritance allows one class (the subclass) to inherit attributes and methods from another class (the superclass or parent class).
+   - It promotes code reuse and the creation of hierarchical relationships between classes.
+
+### 4. **Polymorphism**
+
+   - Polymorphism allows objects of different classes to be treated as objects of a common superclass.
+   - It enables method overriding, where a subclass provides a specific implementation of a method defined in its superclass.
+
+### 5. **Abstraction**
+
+   - Abstraction is the process of simplifying complex systems by modeling classes based on their essential attributes and behaviors.
+   - Abstract classes and interfaces help achieve abstraction by defining method signatures without implementation.
+
+## Example:
+
+```java
+// Define a simple class in Java
+public class Car {
+    // Attributes (fields)
+    private String make;
+    private String model;
+    private int year;
+
+    // Constructor
+    public Car(String make, String model, int year) {
+        this.make = make;
+        this.model = model;
+        this.year = year;
+    }
+
+    // Methods
+    public void startEngine() {
+        System.out.println("Engine started for " + year + " " + make + " " + model);
+    }
+
+    public void stopEngine() {
+        System.out.println("Engine stopped for " + year + " " + make + " " + model);
+    }
+}
