@@ -4,6 +4,7 @@
   .cards {
     padding-right: 1rem;
     padding-left: 1rem;
+    padding-bottom: 1rem;
     display: grid;
     --rows: 3;
     grid-template-columns: repeat(
@@ -18,8 +19,9 @@
 @media (min-width: 768px) {
   /* Add your desktop-specific styles here */
   .cards {
-    padding-right: 15rem;
-    padding-left: 15rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    padding-bottom: 5rem;
     display: grid;
     --rows: 3;
     grid-template-columns: repeat(
