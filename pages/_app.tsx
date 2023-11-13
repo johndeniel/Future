@@ -2,6 +2,7 @@ import '@styles/globals.css'
 import 'nextra-theme-docs/style.css'
 import localFont from "next/font/local"
 import { Inter as FontSans } from "next/font/google"
+import {cn} from '../lib/utils'
 
 
 const fontHeading = localFont({
@@ -15,12 +16,16 @@ const fontSans = FontSans({
 })
 
 
-export default function Nextra({ Component, pageProps }) {
-  const getLayout = Component.getLayout || ((page) => page)
-  return getLayout(
-    <Component {...pageProps} />
-  )
+export default function MyApp({ Component, pageProps }) {
+  return (
+      <main 
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased",
+          fontSans.variable,
+          fontHeading.variable
+        )}
+      >
+        <Component {...pageProps} />
+      </main>
+  );
 }
-
-export const font1 = { fontHeading };
-export const font2 = { fontSans };

@@ -20,11 +20,11 @@ export default function Meneses() {
           </Link>
           {/* Main title */}
           <h1 className="font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
-            Analyzing System Logs with Precision and Mastery
+            Discovering the Power of Today's Innovation
           </h1>
           {/* Description */}
           <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
-            We expertly manage your logs, ensuring precision and mastery in monitoring, troubleshooting, and enhancing system performance
+            Dedicated to empowering your projects with cutting-edge technologies like Rust, Docker, Next.js, and More
           </p>
           {/* Buttons */}
           <div className="space-x-4">
