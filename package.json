@@ -2,34 +2,35 @@
   "name": "johndeniel",
   "version": "0.0.1",
   "description": "Coding Your Vision",
-
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "type-check": "tsc"
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/johndeniel/johndeniel.com"
   },
-
   "author": "John Deniel Dela Peña",
   "license": "MIT",
   "homepage": "https://github.com/johndeniel/johndeniel.com",
-
   "dependencies": {
     "@heroicons/react": "^2.0.18",
+    "@radix-ui/react-icons": "^1.3.0",
+    "@radix-ui/react-slot": "^1.0.2",
+    "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "next": "^13.5.6",
+    "nextra": "^2.13.2",
+    "nextra-theme-docs": "^2.13.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "nextra": "^2.13.2",
-    "nextra-theme-docs": "^2.13.2"
+    "tailwind-merge": "^2.0.0",
+    "tailwindcss-animate": "^1.0.7"
   },
-
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.9",
     "@types/node": "^20.8.7",
     "@types/react": "^18.2.31",
     "@types/react-dom": "^18.2.14",
