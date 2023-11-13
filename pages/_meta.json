@@ -6,5 +6,10 @@
     "theme": {
       "layout": "raw"
     }
+  },
+  "": {
+    "title": "Blog",
+    "type": "page",
+    "href": "https://www.npmjs.com/"
   }
 }

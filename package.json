@@ -1,7 +1,7 @@
 {
-  "name": "johndeniel",
+  "name": "future",
   "version": "0.0.1",
-  "description": "Coding Your Vision",
+  "description": "personal website",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
