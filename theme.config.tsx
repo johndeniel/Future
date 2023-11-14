@@ -1,24 +1,17 @@
 import React from 'react'
 import { useRouter } from 'next/router'
-import  { Footer } from  './components/footer/footer'
+import { DocsThemeConfig } from 'nextra-theme-docs'
+import { Footer } from './src/components/footer/footer'
 
-
-const config = {
+const config: DocsThemeConfig = {
   logo: <span>John Deniel</span>,
   project: {
     link: 'https://github.com/johndeniel',
   },
-  search: {
-    placeholder: "Search..."
+  chat: {
+    link: 'https://discord.com',
   },
-  banner: {
-    key: 'banner',
-    text: (
-      <a href="/">
-        🎉 John Deniel 1.0 is released. Read more →
-      </a>
-    )
-  },
+  docsRepositoryBase: 'https://github.com/johndeniel',
   useNextSeoProps() {
     const { route } = useRouter()
     if (route !== '/') {

@@ -7,11 +7,8 @@
       "layout": "raw"
     }
   },
-  "blog": {
-    "title": "Blog",
-    "theme": {
-      "typesetting": "article"
-    }
-  },
-  "showcase": "Showcase"
+  "about": {
+    "title": "About",
+    "type": "page"
+  }
 }

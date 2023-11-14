@@ -1,12 +1,10 @@
-import '@styles/globals.css'
-import 'nextra-theme-docs/style.css'
+import '../lib/globals.css'
+import {cn} from '../lib/utils'
 import localFont from "next/font/local"
 import { Inter as FontSans } from "next/font/google"
-import {cn} from '../lib/utils'
-
 
 const fontHeading = localFont({
-  src: "../fonts/CalSans-SemiBold.woff2",
+  src: "../lib/CalSans-SemiBold.woff2",
   variable: "--font-heading",
 })
 
@@ -15,8 +13,7 @@ const fontSans = FontSans({
   variable: "--font-sans",
 })
 
-
-export default function MyApp({ Component, pageProps }) {
+export default function Future({ Component, pageProps }) {
   return (
       <main 
         className={cn(
