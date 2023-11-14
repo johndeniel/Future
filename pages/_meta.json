@@ -7,9 +7,11 @@
       "layout": "raw"
     }
   },
-  "": {
+  "blog": {
     "title": "Blog",
-    "type": "page",
-    "href": "https://www.npmjs.com/"
-  }
+    "theme": {
+      "typesetting": "article"
+    }
+  },
+  "showcase": "Showcase"
 }
