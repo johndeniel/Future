@@ -1,9 +1,1 @@
-## Local Development
-
-First, run `pnpm i` to install the dependencies.
-
-Then, run `pnpm dev` to start the development server and visit localhost:3000.
-
-## License
-
-This project is licensed under the MIT License.
+Welcome to a Future where I am thrilled to showcase my expertise in cutting-edge technologies like Docker, Next.js, Firebase, and more. This repository serves as a testament to my ongoing journey in mastering these transformative tools, and I invite you to not only use it as a reference but also contribute to its continuous evolution. 

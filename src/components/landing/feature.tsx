@@ -1,16 +1,14 @@
-"use client";
-import React from "react";
-import type { FC } from 'react';
+"use client"
+
+import React from "react"
+import type { FC } from 'react'
 
 interface FeatureProps {}
 
 const feature: FC<FeatureProps> = () => {
-    return (
-        <React.Fragment>
-         <section
-        id="features"
-        className="container space-y-6 bg-slate-50 py-8 dark:bg-transparent md:py-12 lg:py-24"
-      >
+  return (
+    <React.Fragment>
+      <section className="container space-y-6 bg-slate-50 py-8 dark:bg-transparent md:py-12 lg:py-24">
         <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
           <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
             Features
@@ -115,8 +113,8 @@ const feature: FC<FeatureProps> = () => {
           </p>
         </div>
       </section>
-        </React.Fragment>
-    );
-  };
+    </React.Fragment>
+  )
+}
   
-export default feature;
+export default feature
