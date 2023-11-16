@@ -18,5 +18,9 @@
       "typesetting": "article",
       "layout": "full"
     }
+  },
+  "docs": {
+    "type": "page",
+    "title": "Documentation"
   }
 }

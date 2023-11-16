@@ -15,14 +15,14 @@ const fontSans = FontSans({
 
 export default function Future({ Component, pageProps }) {
   return (
-      <main 
-        className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable,
-          fontHeading.variable
-        )}
-      >
-        <Component {...pageProps} />
-      </main>
-  );
+    <main 
+      className={cn(
+        "min-h-screen bg-background font-sans antialiased",
+        fontSans.variable,
+        fontHeading.variable
+      )}
+    >
+      <Component {...pageProps} />
+    </main>
+  )
 }

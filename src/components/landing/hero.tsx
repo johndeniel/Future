@@ -6,39 +6,9 @@ import type { FC } from 'react'
 import { cn } from "../../lib/utils"
 import { buttonVariants } from "../ui/button"
 
-import { get, ref } from 'firebase/database'
-import { useState, useEffect } from "react"
-import { database } from '../../../firebase'
-
 interface HeroProps {}
 
 const hero: FC<HeroProps> = () => {
-
-  const [imageUrl, setImageUrl] = useState<string | null>(null);
-
-  useEffect(() => {
-    const itemsRef = ref(database, 'items');   
-    get(itemsRef)
-      .then((snapshot) => {
-        if (snapshot.exists()) {
-          const childSnapshot = snapshot.val();
-          const firstChildKey = Object.keys(childSnapshot)[0];
-          const data = childSnapshot[firstChildKey]?.imageUrl;
-
-          if (data) {
-            setImageUrl(data);
-          } else {
-            console.log("No image data available");
-          }
-        } else {
-          console.log("No data");
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
-
   return (
     <React.Fragment>
       <section className="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32">
@@ -57,7 +27,7 @@ const hero: FC<HeroProps> = () => {
             Dedicated to empowering your projects with cutting-edge technologies like Rust, Docker, Next.js, and More
           </p>
           <div className="space-x-4">
-            <Link href={"/skylark/architecture"} className={cn(buttonVariants({ size: "lg" }))}>
+            <Link href={"/docs"} className={cn(buttonVariants({ size: "lg" }))}>
               Get Started
             </Link>
             <Link
@@ -69,13 +39,6 @@ const hero: FC<HeroProps> = () => {
               GitHub
             </Link>
           </div>
-        </div>
-        <div>
-          {imageUrl ? (
-            <img src={imageUrl} alt="User Avatar" />
-          ) : (
-            <p>No image data available</p>
-          )}
         </div>
       </section>
     </React.Fragment>
