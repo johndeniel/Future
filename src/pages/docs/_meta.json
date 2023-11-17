@@ -1,7 +1,8 @@
 {
   "index": "Introduction",
-  "-- Themes": {
+  "-- System Design": {
     "type": "separator",
-    "title": "Themes"
-  }
+    "title": "System Design"
+  },
+  "architecture": "Architecture"
 }
