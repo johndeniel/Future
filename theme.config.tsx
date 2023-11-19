@@ -4,6 +4,10 @@ import { DocsThemeConfig } from 'nextra-theme-docs'
 import { Footer } from './src/components/footer'
 
 const config: DocsThemeConfig = {
+  darkMode: true,
+  nextThemes: {
+    defaultTheme: "dark",
+  },
   logo: <span>John Deniel</span>,
   project: {
     link: 'https://github.com/johndeniel',
