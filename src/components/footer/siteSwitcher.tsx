@@ -1,31 +1,24 @@
-import {cn} from "../../lib/utils";
-import Link from "next/link";
+import Link from "next/link"
+import { cn } from "../../lib/utils"
 
-export type TurboSite = "pack" | "repo";
+export type TurboSite = "pack" | "repo"
 
 export function useTurboSite(): TurboSite | undefined {
-  return undefined;
+  return undefined
 }
 
 function SiteSwitcherLink({ href, text, isActive }: { href: string; text: string; isActive: boolean }) {
-
-  const classes =
-    "py-1 transition-colors duration-300 inline-block w-[50px] cursor-pointer hover:text-black dark:hover:text-white";
-
-  const conditionalClasses = {
-    "text-black dark:text-white": Boolean(isActive),
-  };
-
+  const classes = "py-1 transition-colors duration-300 inline-block w-[50px] cursor-pointer hover:text-black dark:hover:text-white"
+  const conditionalClasses = { "text-black dark:text-white": Boolean(isActive), }
   return (
     <Link className={cn(classes, conditionalClasses)} href={href}>
       {text}
     </Link>
-  );
+  )
 }
 
 function SiteSwitcher() {
   const site = useTurboSite();
-
   return (
     <div className="relative flex items-center justify-between p-2 text-xl group">
       <span
@@ -39,7 +32,6 @@ function SiteSwitcher() {
           }
         )}
       />
-
       <span
         className={cn(
           "z-50 absolute p-1 text-sm flex justify-between text-center w-[100px] text-[#666666] dark:text-[#888888]",
@@ -53,4 +45,4 @@ function SiteSwitcher() {
   );
 }
 
-export default SiteSwitcher;
+export default SiteSwitcher

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useRouter } from 'next/router'
 import { DocsThemeConfig } from 'nextra-theme-docs'
-import { Footer } from './src/components/footer/footer'
+import { Footer } from './src/components/footer'
 
 const config: DocsThemeConfig = {
   logo: <span>John Deniel</span>,
