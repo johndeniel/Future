@@ -2,8 +2,8 @@
 
 import { cn } from "../../lib/utils"
 import type { ReactElement } from "react"
-import { ThemeSwitch } from "nextra-theme-docs"
 import FooterContent from './footer-content'
+import { ThemeSwitch } from "nextra-theme-docs"
 
 function Layout({ menu }: { menu?: boolean }): ReactElement {
   return (

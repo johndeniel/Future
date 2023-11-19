@@ -1,8 +1,15 @@
 {
   "index": "Introduction",
+  "guide": "Guide",
   "-- System Design": {
     "type": "separator",
     "title": "System Design"
   },
-  "architecture": "Architecture"
+  "architecture": "Architecture",
+  "-- Installation": {
+    "type": "separator",
+    "title": "Installation"
+  },
+  "framework": "Framework",
+  "logs": "Log Levels" 
 }
