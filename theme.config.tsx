@@ -2,7 +2,6 @@ import React from 'react'
 import { useRouter } from 'next/router'
 import { DocsThemeConfig } from 'nextra-theme-docs'
 import { Footer } from './src/components/footer'
-import { useConfig } from 'nextra-theme-docs'
 
 const config: DocsThemeConfig = {
   darkMode: true,
@@ -25,57 +24,34 @@ const config: DocsThemeConfig = {
       }
     }
   },
-  head: () => {
-    const { asPath, pathname } = useRouter();
-    const { frontMatter } = useConfig();
-
-    const ogConfig = {
-      title: 'John Deniel',
-      description: 'The Virtual DOM Replacement for React',
-      author: {
-        twitter: 'John Deniel',
-      },
-      favicon: '/favicon.svg',
-    };
-    const favicon = String(ogConfig.favicon);
-    const title = String(frontMatter.title || ogConfig.title);
-    const description = String(frontMatter.description || ogConfig.description);
-    const note =
-      (frontMatter.date as string | undefined) ?? pathname === '/'
-        ? 'million.dev'
-        : pathname;
-    const canonical = new URL(asPath, 'https://johndeniel.com').toString();
-
-    const ogUrl =
-      pathname === '/'
-        ? `https://million.dev/default-og.png`
-        : `https://million.dev/api/og?title=${title}&description=${description}&note=${note}`;
-
+  head: function useHead() {
     return (
       <>
-        <meta property="og:url" content={canonical} />
-        <link rel="canonical" href={canonical} />
-
-        <meta name="description" content={description} />
-        <meta property="og:description" content={description} />
-        <meta name="twitter:site" content={`@${ogConfig.author.twitter}`} />
-        <meta name="twitter:creator" content={`@${ogConfig.author.twitter}`} />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta property="twitter:image" content={ogUrl} />
-        <meta property="twitter:title" content={title} />
-        <meta property="twitter:description" content={description} />
-        <meta property="og:image" content={ogUrl} />
-
-        <link rel="shortcut icon" href={favicon} type="image/svg+xml" />
-        <link rel="apple-touch-icon" href={favicon} type="image/svg+xml" />
-        <meta name="apple-mobile-web-app-title" content={title} />
-
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        {/* Favicons, meta */}
         <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
+          href="./src/public/favicon.png"
+          rel="apple-touch-icon"
+          sizes="180x180"
         />
+        <link
+          href="./src/public/favicon.png"
+          rel="icon"
+          sizes="512x512"
+          type="image/png"
+        />
+        <link
+          href="./src/public/favicon.png"
+          rel="icon"
+          sizes="16x16"
+          type="image/png"
+        />
+        <link href="./src/public/site.webmanifest" rel="manifest" />
+        <link
+          color="#000000"
+          href="./src/public/favicon.png"
+          rel="mask-icon"
+        />
+        <meta content="en" httpEquiv="Content-Language" />
       </>
     );
   },
