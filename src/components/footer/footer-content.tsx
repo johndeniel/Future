@@ -90,7 +90,7 @@ export function FooterContent() {
         <div className="pt-8 mt-8 sm:flex sm:items-center sm:justify-between">
           <div>
             <p className="mt-4 text-xs text-gray-500 dark:text-[#888888]">
-              &copy; {new Date().getFullYear()} Skylark, Inc. All rights
+              &copy; {new Date().getFullYear()} John Deniel, Inc. All rights
               reserved.
             </p>
           </div>
