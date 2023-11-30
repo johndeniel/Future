@@ -1,0 +1,108 @@
+---
+title: 'Data Types'
+---
+
+# Rust Data Types
+
+Rust is a statically-typed language, which means that the data type of a variable is known at compile time. Here's an overview of some fundamental data types in Rust:
+
+## 1. Primitive Data Types
+
+### 1.1 Integer Types
+
+Rust supports both signed and unsigned integers with various bit sizes.
+
+- `i8`, `i16`, `i32`, `i64`, `i128`: Signed integers.
+- `u8`, `u16`, `u32`, `u64`, `u128`: Unsigned integers.
+
+### 1.2 Floating-Point Types
+
+- `f32`: 32-bit floating-point.
+- `f64`: 64-bit floating-point.
+
+### 1.3 Boolean Type
+
+- `bool`: Represents either `true` or `false`.
+
+### 1.4 Character Type
+
+- `char`: Represents a single Unicode character.
+
+## 2. Compound Data Types
+
+### 2.1 Tuples
+
+Tuples are ordered lists of fixed-size elements. Each element can have a different data type.
+
+```rust
+let tuple: (i32, f64, char) = (42, 3.14, 'a');
+```
+
+### 2.2 Arrays
+
+Arrays have a fixed size and all elements must have the same data type.
+
+```rust
+let array: [i32; 5] = [1, 2, 3, 4, 5];
+```
+
+## 3. References and Pointers
+
+### 3.1 References
+References allow you to refer to a value without taking ownership of it.
+
+Immutable reference:
+
+```rust 
+let x = 42;
+let reference = &x;
+```
+
+Mutable reference:
+
+```rust
+let mut y = 10;
+let reference_mut = &mut y;
+```
+
+### 3.2 Pointers
+
+Rust has raw pointers (`*const T` and `*mut T`) that are similar to C pointers.
+
+```rust
+let x = 42;
+let raw_pointer: *const i32 = &x;
+```
+
+## 4. Custom Data Types
+
+### 4.1 Structs
+
+Structs allow you to create custom data types by grouping variables.
+
+```rust
+struct Point {
+    x: f64,
+    y: f64,
+}
+
+let origin = Point { x: 0.0, y: 0.0 };
+```
+
+### 4.2 Enums
+Enums allow you to define a type by enumerating its possible values.
+
+```rust
+enum Coin {
+    Penny,
+    Nickel,
+    Dime,
+    Quarter,
+}
+```
+
+### 4.3 Option Type
+The `Option` type is often used to represent either a value or nothing.
+```rust
+let maybe_value: Option<i32> = Some(42);
+```

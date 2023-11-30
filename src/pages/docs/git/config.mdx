@@ -1,0 +1,79 @@
+---
+title: 'Config'
+---
+
+# Git Configuration Guide
+
+This document will walk you through the essential Git configurations to enhance your version control workflow.
+
+
+## Introduction
+
+Git configuration is crucial for a seamless version control experience. By customizing Git settings, you can improve productivity and tailor Git to your workflow. This guide covers both global and local configurations.
+
+## Global Configuration
+
+Global configurations are applied across all Git repositories on your machine.
+
+To set your global Git username, use the following command:
+
+```bash
+git config --global user.name "Your Name"
+```
+
+To set your global email address, use:
+
+```bash
+git config --global user.email "your.email@example.com"
+```
+
+## Local Repository Configuration
+
+Local configurations are specific to a single Git repository.
+
+To initialize a new Git repository, navigate to your project's root directory and run:
+
+```bash
+git init
+```
+
+## Setting User Information
+
+Setting user information is crucial for accurate commit attribution.
+
+In your local repository, you can set the user name and email using:
+
+```bash
+git config user.name "Your Name"
+git config user.email "your.email@example.com"
+```
+
+## Configuring Editor
+To set your preferred text editor for Git commit messages, use:
+```bash
+git config --global core.editor "your-editor"
+
+```
+
+Replace "your-editor" with the command for your preferred text editor, such as vim, nano, or code.
+
+## Aliases
+Git aliases allow you to create shortcuts for frequently used commands. To set an alias, use:
+```bash 
+git config --global alias.co checkout
+```
+
+Now, you can use git co instead of git checkout.
+
+## Ignoring Files
+
+Create a .gitignore file to specify files and directories that Git should ignore. Add file patterns to ignore:
+
+```txt
+# Ignore logs
+*.log
+
+# Ignore build directories
+/build/
+
+```

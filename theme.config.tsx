@@ -10,12 +10,12 @@ const config: DocsThemeConfig = {
   },
   logo: <span>John Deniel</span>,
   project: {
-    link: 'https://github.com/johndeniel',
+    link: 'https://github.com/johndeniel/Future',
   },
   chat: {
     link: 'https://discord.com',
   },
-  docsRepositoryBase: 'https://github.com/johndeniel',
+  docsRepositoryBase: 'https://github.com/johndeniel/Future/tree/main',
   useNextSeoProps() {
     const { route } = useRouter()
     if (route !== '/') {
@@ -23,10 +23,11 @@ const config: DocsThemeConfig = {
         titleTemplate: '%s – johndeniel'
       }
     }
+  }, feedback: {
+    content: 'Question? Give us feedback →',
+    labels: 'feedback'
   },
-  footer: {
-    component: Footer,
-  },
+
   sidebar: {
     titleComponent({ title, type }) {
       if (type === 'separator') {
@@ -39,6 +40,9 @@ const config: DocsThemeConfig = {
   },
   toc: {
     backToTop: true
+  },
+  footer: {
+    component: Footer,
   }
 }
 

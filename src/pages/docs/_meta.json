@@ -1,15 +1,9 @@
 {
-  "index": "Introduction",
-  "showcase": "Showcase",
-  "-- System Design": {
+  "index": "",
+  "rust": "Rust",
+  "-- DevOps": {
     "type": "separator",
-    "title": "System Design"
+    "title": "DevOps"
   },
-  "architecture": "Architecture",
-  "-- Installation": {
-    "type": "separator",
-    "title": "Installation"
-  },
-  "framework": "Framework",
-  "logs": "Log Levels" 
+  "git": "Git"
 }
