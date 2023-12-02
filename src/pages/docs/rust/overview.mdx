@@ -1,0 +1,180 @@
+---
+title: 'Overview'
+---
+
+import {FileTree} from '../../../components/filetree/file-tree'
+
+# Overview
+
+Rust is a modern programming language known for its focus on performance, reliability, and safety. Originally developed by Mozilla, Rust has gained popularity for its unique features that address common programming pitfalls. One standout aspect is its ***ownership*** system, which enables fine-grained control over memory safety without sacrificing performance. This system, along with the borrow checker, helps prevent common programming errors like ***null pointer*** dereferences and data races.
+
+Rust is often used in systems programming, where low-level control over hardware is crucial. Its syntax is similar to C++, but Rust introduces a novel approach to memory management, ensuring memory safety without the need for a ***garbage collector***.
+
+The language also emphasizes a **"zero-cost abstractions"** philosophy, allowing developers to write high-level code without compromising runtime efficiency. Rust's thriving ecosystem includes a package manager called Cargo, fostering easy code sharing and dependency management.
+
+## Key Topics
+
+- **Introduction to Rust**
+    - Brief overview of Rust's history and development.
+    - Key features and strengths of the Rust programming language.
+    - Understanding the ownership system and its significance.
+
+- **Basic Rust Syntax**
+    - Variables, data types, and basic operations.
+    - Control flow: if statements, loops, and match expressions.
+    - Functions and their usage in Rust.
+
+- **Functions and Ownership**
+    - Defining functions and methods in Rust.
+    - Exploring Rust's ownership model and borrowing system.
+    - Understanding lifetimes in Rust.
+
+- **Structs and Enums**
+    - Creating and using structs to define custom data types.
+    - Defining enums and pattern matching in Rust.
+
+- **Error Handling**
+    - Handling errors using the Result and Option types.
+    - The `?` operator for concise error propagation.
+
+- **Collections**
+    - Vectors, slices, and arrays in Rust.
+    - HashMaps and other collection types.
+    - Iterators and working with collection data.
+
+- **Traits and Generics**
+    - Introduction to traits and their implementation.
+    - Understanding generic types and functions in Rust.
+
+- **Concurrency in Rust**
+    - Introduction to concurrent programming.
+    - Working with threads and asynchronous programming in Rust.
+
+- **Advanced Topics**
+    - Advanced ownership patterns and smart pointers.
+    - Interior mutability and unsafe Rust.
+
+- **Testing and Documentation**
+    - Writing and running tests in Rust.
+    - Documenting your Rust code using Rustdoc.
+
+- **Building Projects with Cargo**
+    - Creating and managing Rust projects with Cargo.
+    - Dependency management and adding external crates.
+
+
+<br/>
+
+## Data Types
+
+Data types are classified into two main categories: primitive types and compound types. Primitive types include integers, floating-point numbers, booleans, and characters, while compound types encompass arrays, tuples, and structs, providing a strong and statically-typed foundation for building efficient programs.
+
+<br/>
+
+### Primitive Data Types
+
+Rust supports both signed and unsigned Integer with various bit sizes.
+
+- `i8`, `i16`, `i32`, `i64`, `i128`: Signed integers.
+- `u8`, `u16`, `u32`, `u64`, `u128`: Unsigned integers.
+
+Floating-Point Types
+
+- `f32`: 32-bit floating-point.
+- `f64`: 64-bit floating-point.
+
+Boolean Type
+
+- `bool`: Represents either `true` or `false`.
+
+Character Type
+
+- `char`: Represents a single Unicode character.
+
+<br/>
+
+### Compound Data Types
+
+**Tuples** are ordered lists of fixed-size elements. Each element can have a different data type.
+
+```rust
+let tuple: (i32, f64, char) = (42, 3.14, 'a');
+```
+
+**Arrays** have a fixed size and all elements must have the same data type.
+
+```rust
+let array: [i32; 5] = [1, 2, 3, 4, 5];
+```
+**Slices** are references to contiguous sequences of elements in a collection. They are declared using the `&` operator on an array.
+
+```rust
+// Create an array
+let array = [1, 2, 3, 4, 5];
+
+// Create a slice from the array
+let slice: &[i32] = &array[1..4];
+
+// Print the slice
+println!("{:?}", slice);
+```
+
+<br/>
+
+
+### References and Pointers
+
+References allow you to refer to a value without taking ownership of it.
+
+```rust 
+// Immutable Reference
+
+let x = 42;
+let reference = &x;
+```
+
+```rust
+// Mutable Reference
+
+let mut y = 10;
+let reference_mut = &mut y;
+```
+
+Rust has **raw pointers** (`*const T` and `*mut T`) that are similar to C pointers.
+
+```rust
+let x = 42;
+let raw_pointer: *const i32 = &x;
+```
+
+<br/>
+
+
+### Custom Data Types
+
+**Structs** allow you to create custom data types by grouping variables.
+
+```rust
+struct Point {
+    x: f64,
+    y: f64,
+}
+
+let origin = Point { x: 0.0, y: 0.0 };
+```
+
+**Enums** allow you to define a type by enumerating its possible values.
+
+```rust
+enum Coin {
+    Penny,
+    Nickel,
+    Dime,
+    Quarter,
+}
+```
+
+The **Option** type is often used to represent either a value or nothing.
+```rust
+let maybe_value: Option<i32> = Some(42);
+```

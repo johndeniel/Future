@@ -1,0 +1,181 @@
+---
+title: 'Template'
+---
+
+Creating a Rust program with the Axum web framework, constructing Docker images, and automating the process of pushing these images to Docker Hub through GitHub Actions.
+
+import {FileTree} from '../../../components/filetree/file-tree'
+
+
+### Folder Structure
+
+<FileTree>
+  <FileTree.Folder name="project" defaultOpen>
+    <FileTree.Folder name=".github" defaultOpen>
+      <FileTree.Folder name="workflows" defaultOpen>
+        <FileTree.File name="build-deploy.yaml" />
+      </FileTree.Folder>
+    </FileTree.Folder>
+    <FileTree.Folder name="src" defaultOpen>
+      <FileTree.File name="main.rs" />
+    </FileTree.Folder>
+    <FileTree.File name="Cargo.lock" />
+    <FileTree.File name="Cargo.toml" />
+    <FileTree.File name="Dockerfile" />
+  </FileTree.Folder>
+</FileTree>
+
+
+<br/>
+
+
+#### Cargo.toml
+This Cargo.toml file utilizes Axum for async web development and employs Tokio runtime (v1.28.2) for concurrency.
+
+```rust filename="project/Cargo.toml"
+[package]
+name = "template"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+axum = "0.6.18"
+tokio = { version = "1.28.2", features = ["macros", "rt-multi-thread"] }
+```
+
+
+<br/>
+
+#### Main.rs
+
+The server binds to "0.0.0.0:8080" serving the application with Axum and Tokio, featuring a single ("/") route handling GET requests asynchronously and delivering a string response.
+
+```rust filename="project/src/main.rs"
+use axum::{
+  routing::get,
+  Router,
+};
+
+#[tokio::main]
+async fn main() {
+
+  // Define the router with a single route
+  let app: Router<_, _> = Router::new().route("/", get(message));
+
+  // Create and run the Axum server on the specified address
+  axum::Server::bind(&"0.0.0.0:8080".parse().unwrap())
+    .serve(app.into_make_service())
+    .await
+    .unwrap();
+}
+
+// Asynchronous handler function for the defined route
+async fn message() -> String {
+  "Axum!".to_owned()
+}
+```
+
+
+<br/>
+
+
+#### Dockerfile
+
+This Dockerfile sets up a multi-stage build for a Rust application using the messense/rust-musl-cross base image, which facilitates cross-compilation to create a statically linked binary.
+
+
+```dockerfile filename="project/Dockerfile"
+FROM messense/rust-musl-cross:x86_64-musl as chef
+RUN cargo install cargo-chef
+WORKDIR /template
+
+FROM chef AS planner
+# Copy source code from previous stage
+COPY . .
+# Generate info for caching dependencies
+RUN cargo chef prepare --recipe-path recipe.json
+
+FROM chef AS builder
+COPY --from=planner /template/recipe.json recipe.json
+# Build & cache dependencies
+RUN cargo chef cook --release --target x86_64-unknown-linux-musl --recipe-path recipe.json
+# Copy source code from previous stage
+COPY . .
+# Build application
+RUN cargo build --release --target x86_64-unknown-linux-musl
+
+# Create a new stage with a minimal image
+FROM scratch
+COPY --from=builder /template/target/x86_64-unknown-linux-musl/release/template /template
+ENTRYPOINT ["/template"]
+EXPOSE 8080
+```
+
+
+<br/>
+
+
+
+#### Build-deploy.yaml
+
+This GitHub Actions workflow automates the deployment of a Rust application to Docker Hub. Triggered on main branch push, it installs dependencies, builds and tests the code, logs in to Docker Hub, sets up Docker Buildx, and pushes the Docker image tagged with version information. The workflow enhances deployment efficiency and reliability.
+
+```yaml filename="project/build-deploy.yaml"
+name: Docker Hub Deployment
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: pulling git repo
+        uses: actions/checkout@v2
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cargo
+            target/
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: ${{ runner.os }}-cargo-
+      - name: Install Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+      - name: Build and test code
+        run: |
+          cargo build --verbose
+          cargo test --verbose
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+
+      - name: Set up Docker Buildx
+        id: buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Build and push
+        id: docker_build
+        uses: docker/build-push-action@v2
+        with:
+          context: ./
+          file: ./Dockerfile
+          builder: ${{ steps.buildx.outputs.name }}
+          push: true
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/template:build-v1.001
+          cache-from: type=local,src=/tmp/.buildx-cache
+          cache-to: type=local,dest=/tmp/.buildx-cache
+      - name: Image digest
+        run: echo ${{ steps.docker_build.outputs.digest }}
+```
+
+The tag `template:build-v1.001` is assigned to the Docker image generated by the GitHub Actions workflow. This specific versioning scheme suggests that it's the first build (v1.001) of a template application. The tag serves as a version identifier for the Docker image, allowing for traceability and management of different releases or iterations of the application.
+
