@@ -4,10 +4,7 @@ import { DocsThemeConfig } from 'nextra-theme-docs'
 import { Footer } from './src/components/footer'
 
 const config: DocsThemeConfig = {
-  darkMode: true,
-  nextThemes: {
-    defaultTheme: "dark",
-  },
+  faviconGlyph: "🚀",
   logo: <span>John Deniel</span>,
   project: {
     link: 'https://github.com/johndeniel/Future',
@@ -16,32 +13,22 @@ const config: DocsThemeConfig = {
     link: 'https://discord.com',
   },
   docsRepositoryBase: 'https://github.com/johndeniel/Future/tree/main',
+  darkMode: true,
+  nextThemes: {
+    defaultTheme: "dark",
+  },
   useNextSeoProps() {
-    const { route } = useRouter()
-    if (route !== '/') {
+    const { asPath } = useRouter()
+    if (asPath !== '/') {
       return {
         titleTemplate: '%s – johndeniel'
       }
     }
-  }, 
-  head: function useHead() {
-    return (
-      <>
-        <meta name="msapplication-TileColor" content="#fff" />
-        <meta name="theme-color" content="#fff" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta httpEquiv="Content-Language" content="en" />
-    
-        <link rel="icon" href="/favicon.png" type="image/png" />
-      </>
-    )
   },
-  
   feedback: {
     content: 'Question? Give us feedback →',
     labels: 'feedback'
   },
-
   sidebar: {
     titleComponent({ title, type }) {
       if (type === 'separator') {
