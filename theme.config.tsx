@@ -4,7 +4,11 @@ import { DocsThemeConfig } from 'nextra-theme-docs'
 import { Footer } from './src/components/footer'
 
 const config: DocsThemeConfig = {
-  faviconGlyph: "🚀",
+  faviconGlyph: "🪶",
+  darkMode: true,
+  nextThemes: {
+    defaultTheme: "dark",
+  },
   logo: <span>John Deniel</span>,
   project: {
     link: 'https://github.com/johndeniel/Future',
@@ -13,10 +17,6 @@ const config: DocsThemeConfig = {
     link: 'https://discord.com',
   },
   docsRepositoryBase: 'https://github.com/johndeniel/Future/tree/main',
-  darkMode: true,
-  nextThemes: {
-    defaultTheme: "dark",
-  },
   useNextSeoProps() {
     const { asPath } = useRouter()
     if (asPath !== '/') {

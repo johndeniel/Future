@@ -21,10 +21,10 @@ const hero: FC<HeroProps> = () => {
             Follow me on Instagram
           </Link>
           <h1 className="font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
-            Future Innovations through Technology Advancement
+            Build Your Masterpiece with Dev Symphony Toolbox
           </h1>
           <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
-            Dedicated to empowering your projects with cutting-edge technologies like Rust, Docker, Next.js, and More
+            Journey to build, collaborate, deploy, test, and monitor with the coolest tools for unmatched excellence.
           </p>
           <div className="space-x-4">
             <Link href={"/docs"} className={cn(buttonVariants({ size: "lg" }))}>
